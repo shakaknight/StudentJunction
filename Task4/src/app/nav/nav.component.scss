@@ -1,0 +1,48 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.input-box {
+  display: inline-block;
+  border: 1px solid;
+  width: 15vw;
+  height: 3.5vh;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+.search-icons {
+  color: black;
+  position: relative;
+  font-size: 23px;
+  top: 6px;
+  right: 45px;
+  cursor: pointer;
+}
+.users-icons {
+  top: 5px;
+  right: 0px;
+  position: relative;
+  margin: 0px 10px 10px 0px;
+  cursor: pointer;
+}
+.user-name {
+  margin: 10px 10px 10px 0px;
+}
+.user-image {
+  border-radius: 50%;
+  height: 35px;
+}

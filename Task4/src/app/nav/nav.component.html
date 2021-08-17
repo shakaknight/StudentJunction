@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container" [ngClass]="{'custom-dark-theme':isDarkTheme}">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/nav/home">Home</a>
+      <a mat-list-item href="/login">Login</a>
+      <a mat-list-item href="#">API call</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span style="font-weight: bolder;font-size:30px;font-family:Verdana, Geneva, Tahoma, sans-serif;">Market</span>
+      <span><input class="form-control me-2 input-box" type="search" placeholder="Search" aria-label="Search">
+        <mat-icon class="search-icons" aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+      </span>
+      <span style="flex:auto"></span>
+      <span class="toggler">
+        <mat-icon class="users-icons" aria-hidden="false">brightness_5</mat-icon>
+      </span>
+      <mat-slide-toggle [(ngModel)]="isDarkTheme" style="margin-right: 10px;"></mat-slide-toggle>
+      <span class="toggler" style="margin-right: 20px;">
+        <mat-icon class="users-icons" aria-hidden="false">dark_mode</mat-icon>
+      </span>
+      <span class="user-name">Dunder muffin</span>
+      <img class="user-image" src="../../assets/user.jpg">
+      <button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>My Profile</button>
+        <button mat-menu-item>My cart</button>
+        <button mat-menu-item>Logout</button>
+      </mat-menu>
+    </mat-toolbar>
+  
+    <router-outlet></router-outlet>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

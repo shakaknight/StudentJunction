@@ -1,0 +1,16 @@
+.example-card {
+  width: 25%;
+  height: 20%;
+}
+.username,
+.password {
+  //   width: 100%;
+  //   height: 30px;
+  width: 97%;
+  height: 30px;
+  //   border: none;
+  border-radius: 3px;
+  padding-left: 8px;
+  margin: 20px 0px 0px 0px;
+}
+// layout="row" layout-align="center center"
